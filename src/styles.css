@@ -1,0 +1,54 @@
+@import 'primeicons/primeicons.css';
+
+:root {
+  --bg: var(--p-surface-200);
+  --panel: var(--p-surface-0);
+  --border: var(--p-surface-300);
+  --text: var(--p-surface-900);
+  --text-muted: var(--p-surface-500);
+
+  --bar-idle: rgb(91, 166, 207);
+  --bar-compare: #ffc228;
+  --bar-swap: #f32929;
+  --bar-write: #6a3df4;
+  --bar-sorted: #23fcac;
+
+  --font: system-ui, sans-serif;
+}
+
+:root.app-dark {
+  --bg: var(--p-surface-950);
+  --panel: var(--p-surface-800);
+  --border: var(--p-surface-700);
+  --text: var(--p-surface-0);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+.panel {
+  padding: 40px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+}
+
+.panel-title {
+  margin: 0 0 24px;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: var(--text);
+}
