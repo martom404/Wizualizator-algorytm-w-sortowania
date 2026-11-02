@@ -1,0 +1,31 @@
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 500px;
+  padding-top: 25px;
+}
+
+.bar {
+  flex: 1;
+  position: relative;
+  min-height: 2px;
+  border-radius: 4px;
+  background: var(--bar-idle);
+  transition: height 0.2s, background-color 0.1s;
+
+  &.compare { background: var(--bar-compare); }
+  &.swap    { background: var(--bar-swap); }
+  &.write   { background: var(--bar-write); }
+  &.sorted  { background: var(--bar-sorted); }
+}
+
+.value {
+  position: absolute;
+  bottom: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-bottom: 5px;
+  font-size: 12px;
+  color: var(--text);
+}

@@ -1,0 +1,50 @@
+<div class="controls">
+  <div class="buttons">
+    <p-button
+      icon = "pi pi-replay"
+      [outlined]="true"
+      [text]="true"
+      severity="contrast"
+      [disabled]="currentStep() === 0"
+      (onClick)="restart.emit()"
+      pTooltip="Restart"
+      tooltipPosition="top"
+    />
+    <p-button
+      icon = "pi pi-step-backward"
+      severity="info"
+      [text]="true"
+      [outlined]="true"
+      [disabled]="currentStep() === 0"
+      (onClick)="previousStep.emit()"
+      pTooltip="Krok wstecz"
+      tooltipPosition="top"
+    />
+    <p-button
+      [icon] = "playIcon()"
+      [label]="playLabel()"
+      [text]="true"
+      (onClick)="togglePlay.emit()"
+    />
+    <p-button
+      icon = "pi pi-step-forward"
+      severity="info"
+      [text]="true"
+      [outlined]="true"
+      [disabled]="currentStep() === lastStep()"
+      (onClick)="nextStep.emit()"
+      pTooltip="Krok do przodu"
+      tooltipPosition="top"
+    />
+  </div>
+
+  <div class="timeline">
+    <p-slider
+    [min]="0"
+    [max]="lastStep()"
+    [ngModel]="currentStep()"
+    (ngModelChange)="seek.emit($event)"
+    />
+    <span class="counter">Kroki: {{currentStep()}} / {{lastStep()}} | Porównania: {{ comparisons() }} | Zamiany: {{ swaps() }}</span>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="bars">
+
+  @for (value of state().array; track $index) {
+    <div class="bar" [class]="color($index)" [style.height.%]="(value / maxValue()) * 100">
+      <span class="value">{{ value }}</span>
+    </div>
+  }
+
+</div>

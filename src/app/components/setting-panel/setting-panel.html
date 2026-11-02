@@ -1,0 +1,38 @@
+<div class="settings">
+  <div class="field">
+    <label>Wybrany algorytm</label>
+    <p-select
+      [options]="algorithms"
+      optionLabel="name"
+      optionValue="id"
+      [ngModel]="selectedAlgorithm()"
+      (ngModelChange)="algorithmChange.emit($event)"
+    />
+  </div>
+  <div class="field">
+    <label>Liczba elementów: {{ selectedSize() }}</label>
+    <p-slider
+      class="slider"
+      [min]="10"
+      [max]="50"
+      [ngModel]="selectedSize()"
+      (ngModelChange)="sizeChange.emit($event)"
+    />
+  </div>
+  <div class="field">
+    <label>Opóźnienie: {{ selectedDelay() }}</label>
+    <p-slider
+      class="slider"
+      [min]="50"
+      [max]="1000"
+      [ngModel]="selectedDelay()"
+      (ngModelChange)="delayChange.emit($event)"
+    />
+  </div>
+
+  <p-button
+    label="Nowa tablica"
+    severity="warn"
+    (onClick)="restart.emit()"
+  />
+</div>

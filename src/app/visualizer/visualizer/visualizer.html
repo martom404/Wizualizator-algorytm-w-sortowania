@@ -1,0 +1,48 @@
+<div class="panel stage">
+
+  <h2 class="panel-title">Wizualizator algorytmów sortowania</h2>
+
+  <p class="operation">{{ sortPlayer.state().description }}</p>
+
+  <app-sort-bars [state]="sortPlayer.state()" [maxValue]="sortPlayer.info().maxValue"/>
+
+  <app-player-controls
+    [currentStep]="sortPlayer.currentStep()"
+    [lastStep]="sortPlayer.lastStep()"
+    [isPlaying]="sortPlayer.isPlaying()"
+    [comparisons]="sortPlayer.state().comparisons"
+    [swaps]="sortPlayer.state().swaps"
+
+    (togglePlay)="sortPlayer.togglePlay()"
+    (nextStep)="sortPlayer.pause(); sortPlayer.stepForward()"
+    (previousStep)="sortPlayer.stepBack()"
+    (restart)="sortPlayer.restart()"
+    (seek)="sortPlayer.seek($event)"
+  />
+</div>
+
+<div class="sidebar">
+  <div class="panel">
+
+    <h2 class="panel-title">Ustawienia</h2>
+
+    <app-setting-panel
+      [selectedAlgorithm]="sortPlayer.algorithm()"
+      [selectedSize]="sortPlayer.size()"
+      [selectedDelay]="sortPlayer.delay()"
+
+      (algorithmChange)="sortPlayer.setAlgorithm($event)"
+      (sizeChange)="sortPlayer.setSize($event)"
+      (delayChange)="sortPlayer.setDelay($event)"
+      (restart)="sortPlayer.shuffle()"
+    />
+  </div>
+
+  <div class="panel">
+
+    <h2 class="panel-title">Informacje</h2>
+    <p>{{ sortPlayer.info().name }}</p>
+  </div>
+</div>
+
+
