@@ -1,9 +1,9 @@
 <div>
-  <h3>Algorytm: {{ algorithmInfo().name }}</h3>
-  
-  <p><strong>Opis:</strong> {{ algorithmInfo().summary }}</p>
+  <h3>Algorytm: {{ info().name }}</h3>
 
-  <p><strong>Przedział wartości: 1 - {{ algorithmInfo().maxValue }}</strong></p>
+  <p><strong>Opis:</strong> {{ info().summary }}</p>
+
+  <p><strong>Przedział wartości:</strong> 1 - {{ info().maxValue }}</p>
   <p-table [value]="rows()" showGridlines>
     <ng-template #header>
       <tr>
@@ -14,12 +14,12 @@
     </ng-template>
     <ng-template #body let-info>
       <tr>
-        <td>{{ info.worst }}</td>
-        <td>{{ info.average }}</td>
-        <td>{{ info.best }}</td>
+        <td><p-tag [value]="info.worst" severity="danger"/></td>
+        <td><p-tag [value]="info.average" severity="warn"/></td>
+        <td><p-tag [value]="info.best" severity="success"/></td>
       </tr>
     </ng-template>
   </p-table>
 
-  <span class="note">{{ algorithmInfo().note }}</span>
+  <p class="note">{{ info().note }}</p>
 </div>

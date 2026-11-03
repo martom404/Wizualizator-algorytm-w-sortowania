@@ -1,17 +1,15 @@
 import { Component, input, computed } from '@angular/core';
-import { ALGORITHM_INFO } from '../../sorting/algorithm-info';
-import { Algorithm } from '../../sorting/models';
+import { AlgorithmInfo} from '../../sorting/models';
 import { TableModule } from 'primeng/table';
+import { TagModule } from 'primeng/tag';
 
 @Component({
   selector: 'app-info-panel',
-  imports: [TableModule],
+  imports: [TableModule, TagModule],
   templateUrl: './info-panel.html',
   styleUrl: './info-panel.css',
 })
 export class InfoPanel {
-  algorithm = input.required<Algorithm>();
-
-  algorithmInfo = computed(() => ALGORITHM_INFO[this.algorithm()]);
-  rows = computed(() => [this.algorithmInfo()]);
+  info = input.required<AlgorithmInfo>();
+  rows = computed(() => [this.info()]);
 }

@@ -1,4 +1,6 @@
 .note{
-    background-color: var(--note);
-    color: var(--text-muted);
+  margin: 0;
+  padding: 12px 12px 0 12px;
+  color: var(--text);
+  font-size: 15px;
 }
