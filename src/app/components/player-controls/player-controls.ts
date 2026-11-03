@@ -16,6 +16,7 @@ export class PlayerControls {
   isPlaying = input.required<boolean>();
   comparisons = input.required<number>();
   swaps = input.required<number>();
+  writes = input.required<number>();
 
   togglePlay = output<void>();
   nextStep = output<void>();

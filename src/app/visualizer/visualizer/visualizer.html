@@ -12,6 +12,7 @@
     [isPlaying]="sortPlayer.isPlaying()"
     [comparisons]="sortPlayer.state().comparisons"
     [swaps]="sortPlayer.state().swaps"
+    [writes]="sortPlayer.state().writes"
 
     (togglePlay)="sortPlayer.togglePlay()"
     (nextStep)="sortPlayer.pause(); sortPlayer.stepForward()"

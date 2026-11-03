@@ -45,6 +45,6 @@
     [ngModel]="currentStep()"
     (ngModelChange)="seek.emit($event)"
     />
-    <span class="counter">Kroki: {{currentStep()}} / {{lastStep()}} | Porównania: {{ comparisons() }} | Zamiany: {{ swaps() }}</span>
+    <span class="counter">Kroki: {{currentStep()}} / {{lastStep()}} | Porównania: {{ comparisons() }} | Zamiany: {{ swaps() }} | Zapisy: {{ writes() }}</span>
   </div>
 </div>
