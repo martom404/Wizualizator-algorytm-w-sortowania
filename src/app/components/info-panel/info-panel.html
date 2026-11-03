@@ -1,0 +1,25 @@
+<div>
+  <h3>Algorytm: {{ algorithmInfo().name }}</h3>
+  
+  <p><strong>Opis:</strong> {{ algorithmInfo().summary }}</p>
+
+  <p><strong>Przedział wartości: 1 - {{ algorithmInfo().maxValue }}</strong></p>
+  <p-table [value]="rows()" showGridlines>
+    <ng-template #header>
+      <tr>
+        <th>Najgorszy przypadek</th>
+        <th>Średni przypadek</th>
+        <th>Najlepszy przypadek</th>
+      </tr>
+    </ng-template>
+    <ng-template #body let-info>
+      <tr>
+        <td>{{ info.worst }}</td>
+        <td>{{ info.average }}</td>
+        <td>{{ info.best }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <span class="note">{{ algorithmInfo().note }}</span>
+</div>

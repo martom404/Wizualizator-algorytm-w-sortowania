@@ -1,0 +1,4 @@
+.note{
+    background-color: var(--note);
+    color: var(--text-muted);
+}

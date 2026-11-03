@@ -12,7 +12,7 @@
   min-height: 2px;
   border-radius: 4px;
   background: var(--bar-idle);
-  transition: height 0.2s, background-color 0.1s;
+  transition: height 0.5s, background-color 0.1s;
 
   &.compare { background: var(--bar-compare); }
   &.swap    { background: var(--bar-swap); }

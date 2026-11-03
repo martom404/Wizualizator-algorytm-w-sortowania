@@ -41,7 +41,9 @@
   <div class="panel">
 
     <h2 class="panel-title">Informacje</h2>
-    <p>{{ sortPlayer.info().name }}</p>
+    <app-info-panel 
+      [algorithm]="sortPlayer.algorithm()"
+    />
   </div>
 </div>
 
