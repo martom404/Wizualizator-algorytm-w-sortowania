@@ -81,7 +81,8 @@ export function quickSort(array: number[]): Step[] {
 
 export function countingSort(array: number[]): Step[] {
   const steps: Step[] = [];
-  const counts = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  const max = Math.max(...array);
+  const counts: number[] = new Array(max + 1).fill(0);
 
   //1. Liczenie
   for (let i = 0; i < array.length; i++) {
@@ -91,7 +92,7 @@ export function countingSort(array: number[]): Step[] {
 
   //2. Wpisywanie od najmniejszej wartosci
   let position = 0;
-  for (let value = 1; value <= 9; value++) {
+  for (let value = 0; value <= max; value++) {
     while (counts[value] > 0) {
       steps.push({ type: 'place', index: position, value: value });
       counts[value]--;

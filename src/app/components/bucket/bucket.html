@@ -1,0 +1,12 @@
+<div class="buckets">
+  @for (bucket of buckets(); track $index; let bucketNumber = $index) {
+    <div class="bucket" [class.active]="bucketNumber === active()">
+      <div class="box">
+        @for (value of bucket; track $index) {
+          <span class="chip">{{ value }}</span>
+        }
+      </div>
+      <span class="label">{{ bucketNumber }}</span>
+    </div>
+  }
+</div>

@@ -6,6 +6,10 @@
 
   <app-sort-bars [state]="sortPlayer.state()" [maxValue]="sortPlayer.info().maxValue"/>
 
+  @if (sortPlayer.state().buckets) {
+  <app-bucket [buckets]="sortPlayer.state().buckets" [active]="sortPlayer.state().activeSlot" />
+  }
+
   <app-player-controls
     [currentStep]="sortPlayer.currentStep()"
     [lastStep]="sortPlayer.lastStep()"

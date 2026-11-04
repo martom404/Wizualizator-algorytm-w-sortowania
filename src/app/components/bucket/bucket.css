@@ -1,0 +1,39 @@
+.buckets {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 6px;
+}
+
+.bucket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 3px;
+  width: 100%;
+  height: 120px;
+  padding: 6px 2px;
+  border: 1px solid var(--border);
+  border-top: none;
+  transition: border-color 0.2s;
+}
+
+.chip {
+  padding: 1px 5px;
+  font-size: 11px;
+}
+
+.label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+
+.active .box   { border-color: var(--bar-write); }
+.active .label { color: var(--bar-write); }

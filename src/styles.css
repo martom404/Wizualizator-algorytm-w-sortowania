@@ -7,10 +7,10 @@
   --text: var(--p-surface-900);
   --text-muted: var(--p-surface-500);
 
-  --bar-idle: rgb(91, 166, 207);
-  --bar-compare: #ffc228;
+  --bar-idle: rgb(224, 44, 179);
+  --bar-compare: #f9b300;
   --bar-swap: #f32929;
-  --bar-write: #6a3df4;
+  --bar-write: #3e00f9;
   --bar-sorted: #23fcac;
 
   --font: system-ui, sans-serif;

@@ -11,7 +11,7 @@ export class SortPlayer {
   //Ustawienia użytkownika
   algorithm = signal<Algorithm>('bubble');
   size = signal(10);
-  delay = signal(100);
+  delay = signal(200);
 
   snapshots = signal<SortState[]>([]);
   currentStep = signal(0);

@@ -5,7 +5,8 @@ export function initialState(array: number[], algorithm: Algorithm): SortState {
   // Tablica zliczeń tylko dla Counting Sort
   let counts: number[] | null = null;
   if (algorithm === 'counting') {
-    counts = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    // Rozmiar zależy od największej wartości w tablicy
+    counts = new Array(Math.max(9, ...array) + 1).fill(0);
   }
 
   // 10 pustych kubełków tylko dla Radix i Bucket Sort
@@ -65,7 +66,7 @@ export function applyStep(previous: SortState, step: Step): SortState {
       if (step.indexA === step.indexB) {
         next.description = `Element ${a} zostaje na pozycji ${step.indexA + 1}`;
       } else {
-        next.description = `Zamiana: ${a} <---> ${b}`;
+        next.description = `Zamiana: ${a} <--> ${b}`;
       }
       break;
     }

@@ -22,7 +22,7 @@
 
 .value {
   position: absolute;
-  bottom: 105%;
+  bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
   padding-bottom: 5px;
